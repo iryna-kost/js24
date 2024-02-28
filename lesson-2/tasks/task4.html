@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДЗ №2 / Задача 4</title>
+</head>
+
+<body>
+
+  <h1>Задача 4</h1>
+  <p>
+    Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.
+  </p>
+  <p>
+    Конвертація <span class="cm"></span> cm в інші одиниці виміру:
+
+  </p>
+  <p>m = <span class="m"></span></p>
+  <p>km = <span class="km"></span></p>
+
+  <script>
+    // 1.Вводимо необхідні дані
+    let cm = parseInt(prompt('Введіть довжину у сантиметрах (см)', '1000'));
+    let m = cm / 100;
+    let km = cm / 100000;
+
+    // 2.Знаходимо результат
+    let roundM = m.toFixed(2);
+    let roundKm = km.toFixed(2);
+
+    // 3.Виводимо результат
+    document.querySelector('.cm').innerHTML = `${cm}`;
+    document.querySelector('.m').innerHTML = `${roundM}`;
+    document.querySelector('.km').innerHTML = `${roundKm}`;
+
+
+  </script>
+
+</body>
+
+</html>

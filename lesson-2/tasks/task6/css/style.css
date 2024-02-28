@@ -1,0 +1,29 @@
+.sales-receipt {
+  max-width: 350px;
+  margin: 50px auto;
+  padding: 20px 15px 40px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.sales-receipt__top,
+.sales-receipt__items,
+.sales-receipt__bottom {
+  border-bottom: 1px dashed #000;
+}
+
+.sales-receipt__top {
+  text-align: center;
+}
+
+.sales-receipt__items-header,
+.sales-receipt__product,
+.sales-receipt__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sales-receipt__items-text,
+.col {
+  width: 70px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДЗ №2 / Задача 6</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <h1>Задача 6</h1>
+  <p>
+    З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо та
+    загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
+  </p>
+
+  <script>
+    // 1.Вводимо необхідні дані
+    let firstProductPrice = parseFloat(prompt('Ціна МОЛОКА, 900мл', '2.00 грн.'));
+    let firstProductQuantity = parseInt(prompt('Кільктість МОЛОКА, уп.', '1 уп.'));
+    let secondProductPrice = parseFloat(prompt('Ціна ЦУКРУ, 1кг', '25.00 грн.'));
+    let secondProductQuantity = parseInt(prompt('Кільктість ЦУКРУ, кг.', '1 кг'));
+    let thirdProductPrice = parseFloat(prompt('Ціна за ХЛІБ, 1шт.', '20.00 грн.'));
+    let thirdProductQuantity = parseInt(prompt('Кільктість ХЛІБА, шт.', '1 шт.'));
+
+    // 2.Знаходимо результат
+    let firstProductAmount = firstProductPrice * firstProductQuantity;
+    let secondProductAmount = secondProductPrice * secondProductQuantity;
+    let thirdProductAmount = thirdProductPrice * thirdProductQuantity;
+    let sum = firstProductAmount + secondProductAmount + thirdProductAmount;
+
+    // 3.Виводимо результат
+    let insertResult = `<section class="sales-receipt">
+        <div class="sales-receipt__top">
+          <h2>Касовий чек</h2>
+          <p class="sales-receipt__top-info">ФОП...</p>
+        </div>
+
+        <div class="sales-receipt__items">
+          <div class="sales-receipt__items-header">
+            <div class="sales-receipt__items-text">Назва товару</div>
+            <div class="sales-receipt__items-text">Ціна товару</div>
+            <div class="sales-receipt__items-text">Кількість товару</div>
+            <div class="sales-receipt__items-text">Сумма товару</div>
+          </div>
+          <div class="sales-receipt__products">
+            <div class="sales-receipt__product">
+              <h3 class="sales-receipt__product-title col">Молоко</h3>
+              <div class="sales-check__product-cost col">${firstProductPrice.toFixed(2)}</div>
+              <div class="sales-receipt__product-quantity col">${firstProductQuantity}</div>
+              <div class="sales-receipt__product-amount col">${firstProductAmount.toFixed(2)}</div>
+            </div>
+            <div class="sales-receipt__product">
+              <h3 class="sales-receipt__product-title col">Цукор</h3>
+              <div class="sales-check__product-cost col">${secondProductPrice.toFixed(2)}</div>
+              <div class="sales-receipt__product-quantity col">${secondProductQuantity}</div>
+              <div class="sales-receipt__product-amount col">${secondProductAmount.toFixed(2)}</div>
+            </div>
+            <div class="sales-receipt__product">
+              <h3 class="sales-receipt__product-title col">Хліб</h3>
+              <div class="sales-check__product-cost col">${thirdProductPrice.toFixed(2)}</div>
+              <div class="sales-receipt__product-quantity col">${thirdProductQuantity}</div>
+              <div class="sales-receipt__product-amount col">${thirdProductAmount.toFixed(2)}</div>
+            </div>
+          </div>
+        </div>
+        <div class="sales-receipt__bottom">
+          <p class="sales-receipt__bottom-info">Сумма</p>
+          <p class="sales-receipt__bottom-amount">${sum.toFixed(2)}</p>
+        </div>
+      </section>`;
+
+    document.querySelector('p').insertAdjacentHTML('afterend', insertResult);
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДЗ №2 / Задача 2</title>
+</head>
+
+<body>
+
+  <h1>Задача 2</h1>
+  <p>
+    Дано рік народження (дата: 1 січня) та поточний рік. Знайти кількість років.
+  </p>
+  <script>
+    // 1.Вводимо необхідні дані
+    const DATE = new Date();
+    let currentYear = DATE.getFullYear();
+    let birthYear = parseInt(prompt('Введіть Ваш рік народження', '1999'));
+    let age;
+
+    // 2.Знаходимо результат
+    age = currentYear - birthYear;
+
+    // 3.Виводимо результат
+    let result = `<p>Кількість років ${age}</p>`;
+
+    document.querySelector('p').insertAdjacentHTML('afterend', `${result}`);
+
+  </script>
+
+</body>
+
+</html>

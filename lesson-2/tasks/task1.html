@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДЗ №2 / Задача 1</title>
+  <style>
+    table {
+      border: 2px solid rgb(140 140 140);
+    }
+
+    th,
+    td {
+      border: 1px solid rgb(160 160 160);
+      min-width: 100px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="task1">
+    <h1>Задача 1</h1>
+    <p>
+      Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці
+    </p>
+    <p>
+      <b>Перше число</b> <span class="firstNum"></span>
+    </p>
+    <p>
+      <b>Друге число</b> <span class="secondNum"></span>
+    </p>
+  </div>
+
+  <script>
+    // 1.Вводимо необхідні дані
+    let firstNum = parseFloat(prompt('Введіть перше число', '0'));
+    let secondNum = parseFloat(prompt('Введіть друге число', '0'));
+    let task1 = document.querySelector('.task1');
+
+    // 2.Знаходимо результат
+    let sum = firstNum + secondNum;
+    let multiplication = firstNum * secondNum;
+    let division = firstNum / secondNum;
+
+    // 3.Виводимо результат
+    document.querySelector('.firstNum').innerHTML = `${firstNum}`;
+    document.querySelector('.secondNum').innerHTML = `${secondNum}`;
+
+    let createTbl =
+    `<table>
+      <tr>
+        <th>Сума</th>
+        <td>${sum}</td>
+      </tr>
+      <tr>
+        <th>Добуток</th>
+        <td>${multiplication}</td>
+      </tr>
+      <tr>
+        <th>Частка</th>
+        <td>${division}</td>
+      </tr>
+    </table>`;
+
+    task1.insertAdjacentHTML("beforeend", createTbl);
+
+  </script>
+
+</body>
+
+</html>

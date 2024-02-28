@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДЗ №2 / Задача 0</title>
+  <style>
+    img {
+      width: 90px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    ul li {
+      list-style: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Задача 0</h1>
+  <p>
+    Обчислити значення виразів
+  <ol>
+    <li>
+      <img src="./img/1.png" alt="формула">
+    </li>
+    <li>
+      <img src="./img/2.png" alt="формула">
+    </li>
+    <li>
+      <img src="./img/3.png" alt="формула">
+    </li>
+    <li>
+      <img src="./img/4.png" alt="формула">
+    </li>
+  </ol>
+  </p>
+
+  <p>Введені дані:</p>
+  <ul>
+    <li>
+      a = <span id="a"></span>
+    </li>
+    <li>
+      b = <span id="b"></span>
+    </li>
+    <li>
+      c = <span id="c"></span>
+    </li>
+  </ul>
+
+  <p>Результат:</p>
+  <ul>
+    <li>
+      S<sub>1</sub> = <span id="s1"></span>
+    </li>
+    <li>
+      S<sub>2</sub> = <span id="s2"></span>
+    </li>
+    <li>
+      S<sub>3</sub> = <span id="s3"></span>
+    </li>
+    <li>
+      S<sub>4</sub> = <span id="s4"></span>
+    </li>
+  </ul>
+
+  <script>
+    // 1.Вводимо необхідні дані
+    let a = parseInt(prompt('Введіть значення а', 0));
+    let b = parseInt(prompt('Введіть значення b', 0));
+    let c = parseInt(prompt('Введіть значення c', 0));
+
+    let s1, s2, s3, s4;
+
+    let resultS1 = document.getElementById('s1');
+    let resultS2 = document.getElementById('s2');
+    let resultS3 = document.getElementById('s3');
+    let resultS4 = document.getElementById('s4');
+
+    // 2.Знаходимо результат
+    s1 = a + 12 + b;
+    s2 = Math.sqrt((a + b) / (2 * a));
+    s3 = Math.cbrt((a + b) * c);
+    s4 = Math.sin(a / (-b));
+
+    // 3.Виводимо результат
+    document.querySelector('#a').innerHTML = `${a}`;
+    document.querySelector('#b').innerHTML = `${b}`;
+    document.querySelector('#c').innerHTML = `${c}`;
+    resultS1.innerHTML = `${s1}`;
+    resultS2.innerHTML = `${s2}`;
+    resultS3.innerHTML = `${s3}`;
+    resultS4.innerHTML = `${s4}`;
+  </script>
+
+</body>
+
+</html>
