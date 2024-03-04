@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДЗ №4 / Задача 5</title>
+</head>
+
+<body>
+
+  <h1>Задача 5</h1>
+  <p>
+    З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль). Вивести на
+    екран назву транспортного засобу, яким він може керувати.
+  </p>
+
+  <script>
+    // 1.Вводимо необхідні дані
+    const USER_DRIVER_CATEGORY = prompt('Введіть назву категорії водія укр. літерами (A/В/С)', 'с');
+    let result;
+
+    // 2.Знаходимо результат
+    switch (USER_DRIVER_CATEGORY.toUpperCase()) {
+      case 'А':
+        result = 'А-мотоцикл';
+        break;
+      case 'В':
+        result = 'В-легковий автомобіль';
+        break;
+      case 'С':
+        result = 'С-вантажний автомобіль';
+        break;
+      default:
+        result = 'введені не корректні дані';
+    }
+
+    // 3.Виводимо результат
+    document.querySelector('p').insertAdjacentHTML('afterend', `<p>${result}</p>`);
+
+  </script>
+
+</body>
+
+</html>

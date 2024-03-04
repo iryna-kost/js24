@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДЗ №4 / Задача 7</title>
+</head>
+
+<body>
+
+  <h1>Задача 7</h1>
+  <p>
+    З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься
+  </p>
+
+  <script>
+    // 1.Вводимо необхідні дані
+    const MONTH_NUMBER = parseInt(prompt('номер місяця', '1'));
+    let result = "Пора року: ";
+
+    // 2.Знаходимо результат
+    if (MONTH_NUMBER === 12 || MONTH_NUMBER === 1 || MONTH_NUMBER === 2) {
+      result += "зима";
+    } else if (MONTH_NUMBER >= 3 && MONTH_NUMBER <= 5) {
+      result += "весна";
+    } else if (MONTH_NUMBER >= 6 && MONTH_NUMBER <= 8) {
+      result += "літо";
+    } else if (MONTH_NUMBER >= 9 && MONTH_NUMBER <= 11) {
+      result += "осінь";
+    } else {
+      result = "введені не корректні дані";
+    }
+
+
+    // 3.Виводимо результат
+    document.querySelector('p').insertAdjacentHTML('afterend', `<p>${result}</p>`);
+
+  </script>
+
+</body>
+
+</html>

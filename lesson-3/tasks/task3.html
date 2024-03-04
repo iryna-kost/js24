@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДЗ №3 / Задача 3</title>
+</head>
+
+<body>
+
+  <h1>Задача 3</h1>
+  <p>
+    Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
+  </p>
+
+  <script>
+    // 1.Вводимо необхідні дані
+    const MIN_NUMBER = Math.ceil(1);
+    const MAX_NUMBER = Math.floor(5);
+    let firstAttempt = parseInt(prompt("Спробуйте вгадати число за 2 спроби. 1 спроба! Введіть число від 1 до 5"));
+    let secondAttempt = parseInt(prompt("2 спроба! Введіть число від 1 до 5"));
+
+
+    // 2.Знаходимо результат
+    let getRandomInt = Math.floor(Math.random() * (MAX_NUMBER - MIN_NUMBER + 1) + MIN_NUMBER);
+    let result = (getRandomInt === firstAttempt || getRandomInt === secondAttempt) ? `Вгадали! Рандомне число було ${getRandomInt}` : `Не вгадали! Рандомне число було ${getRandomInt}`;
+
+    // 3.Виводимо результат
+    document.querySelector('p').insertAdjacentHTML('afterend', `<p>${result}</p>`);
+
+  </script>
+
+</body>
+
+</html>

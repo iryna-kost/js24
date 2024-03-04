@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ДЗ №3 / Задача 2</title>
+</head>
+
+<body>
+
+  <h1>Задача 2</h1>
+  <p>
+    З клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не вистачає то відмовляємо у покупці, інакше, якщо ще
+    залишаються гроші, то пропонуємо купити лотерею за 4 грн.
+  </p>
+
+  <script>
+    // 1.Вводимо необхідні дані
+    const PRODUCT_PRICE = parseFloat(prompt("ціна товару", "3,00"));
+    const MONEY_TRASFER = parseFloat(prompt("кількість грошей", "7,00"));
+    const LOTTERY_PRICE = 4;
+    let balanceOfFunds = MONEY_TRASFER - PRODUCT_PRICE;
+    let result;
+
+    // 2.Знаходимо результат
+    if (MONEY_TRASFER >= PRODUCT_PRICE) {
+      result = `Успіх! Залишок коштів ${balanceOfFunds.toFixed(2)}грн.`;
+      if (balanceOfFunds >= LOTTERY_PRICE) result += " Пропонуємо купити лотерею за 4 грн."
+    }
+    else {
+      result = "Недостатньо коштів для здійснення операції"
+    }
+
+    // 3.Виводимо результат
+    document.querySelector('p').insertAdjacentHTML('afterend', `<p>${result}</p>`);
+
+  </script>
+
+</body>
+
+</html>
